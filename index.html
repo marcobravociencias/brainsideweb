@@ -10,6 +10,26 @@
 										Impulsa tu negocio con tecnología, diseño e innovación en un solo lugar.">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>
+			document.addEventListener("keydown", function(e) {
+				if (e.ctrlKey && e.key === "P" || e.ctrlKey && e.key === "p" || e.metaKey && e.key === "p" || e.metaKey && e.key === "P" || e.key === "PrintScreen" || e.key === "F13") {
+					e.preventDefault();
+					/*alert("Impresión bloqueada");*/
+					navigator.clipboard.writeText('');
+					$("body").hide();
+				}
+			});
+			document.addEventListener('keydown', (event) => {
+				var keyValue = event.key;
+				var codeValue = event.code;
+				console.log("keydown event, keyValue: " + keyValue);
+				console.log("keydown event, codeValue: " + codeValue);
+			}, false);
+		</script>
+
+		<script type='text/javascript'>
+			document.oncontextmenu = function(){return false}
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -456,21 +476,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/main.js"></script>
-		<script>
-			document.addEventListener("keydown", function(e) {
-				if (e.ctrlKey && e.key === "P" || e.ctrlKey && e.key === "p" || e.metaKey && e.key === "p" || e.metaKey && e.key === "P" || e.key === "PrintScreen" || e.key === "F13") {
-					e.preventDefault();
-					alert("Impresión bloqueada");
-				}
-			});
 
-			document.addEventListener('keydown', (event) => {
-				var keyValue = event.key;
-				var codeValue = event.code;
-				console.log("keydown event, keyValue: " + keyValue);
-				console.log("keydown event, codeValue: " + codeValue);
-			}, false);
-		</script>
+
 
 	</body>
 </html>
